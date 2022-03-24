@@ -19,6 +19,9 @@ int main() {
     Shovel shovel("ExcavaTierra", DIAMOND);
     Machete machete("CortaCocos", DIAMOND);
     sword.showSword();
+    sword.setEnchantment(3);
+    sword.attack();
+    sword.showSword();
     sword.attack();
     sword.showSword();
     cout << " " << endl;

@@ -51,8 +51,15 @@ class Axe : protected Tools {
     }
     void attackTree() {
         setHealth(getHealth() - (1000 / getDurability() / 2));
-        cout << "Daño realizado: " << (sharpness * getDamage() * 2.5 / 1000) << endl;
+        cout << "Daño realizado: " << (sharpness * getDamage() * 2.5 * enchantmentLevel/ 1000) << endl;
+    }
+    void setEnchantment(int level) {
+        this -> enchantmentLevel = level;
+    }
+    int getEnchantment() {
+        return this -> enchantmentLevel;
     }
     private:
+    int enchantmentLevel = 1;
     int sharpness;
 };

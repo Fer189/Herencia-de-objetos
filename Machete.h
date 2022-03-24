@@ -44,11 +44,18 @@ class Machete : protected Tools {
     }
     void attack() {
         setHealth(getHealth() - (1000 / getDurability()));
-        cout << "Daño realizado: " << (sharpness * getDamage() / 1000) << endl;
+        cout << "Daño realizado: " << (sharpness * getDamage() * enchantmentLevel/ 1000) << endl;
     }
     void repair() {
         setHealth(100);
     }
+    void setEnchantment(int level) {
+        this -> enchantmentLevel = level;
+    }
+    int getEnchantment() {
+        return this -> enchantmentLevel;
+    }
     private:
+    int enchantmentLevel = 1;
     int sharpness;
 };

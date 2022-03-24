@@ -51,8 +51,15 @@ class Picaxe : protected Tools {
     }
     void attackMineralOre() {
         setHealth(getHealth() - (1000 / getDurability() / 2));
-        cout << "Daño realizado: " << (hardness * getDamage() * 3 / 1000) << endl;
+        cout << "Daño realizado: " << (hardness * getDamage() * 3 * enchantmentLevel/ 1000) << endl;
+    }
+    void setEnchantment(int level) {
+        this -> enchantmentLevel = level;
+    }
+    int getEnchantment() {
+        return this -> enchantmentLevel;
     }
     private:
+    int enchantmentLevel = 1;
     int hardness;
 };
