@@ -8,36 +8,36 @@
 #define DIAMOND 5
 using namespace std;
 
-class Sword : protected Tools {
+class Axe : protected Tools {
     public:
-    Sword(string name, int material) {
+    Axe(string name, int material) {
         sharpness = 100;
         setName(name);
         setHealth(100);
         switch(material) {
             case WOOD:
-            setDurability(100);
-            setDamage(100);
+            setDurability(150);
+            setDamage(50);
             break;
             case STONE:
-            setDurability(150);
-            setDamage(150);
+            setDurability(200);
+            setDamage(75);
             break;
             case STEEL:
-            setDurability(200);
-            setDamage(200);
+            setDurability(250);
+            setDamage(100);
             break;
             case GOLD:
-            setDurability(250);
-            setDamage(350);
+            setDurability(300);
+            setDamage(175);
             break;
             case DIAMOND:
-            setDurability(350);
-            setDamage(450);
+            setDurability(400);
+            setDamage(225);
             break;
         }
     }
-    void showSword() {
+    void showAxe() {
         cout << "Salud: " << getHealth() << endl;
         cout << "Nombre: " << getName() << endl;
         cout << "Durabilidad " << getDurability() << endl;
@@ -48,6 +48,10 @@ class Sword : protected Tools {
     }
     void repair() {
         setHealth(100);
+    }
+    void attackTree() {
+        setHealth(getHealth() - (1000 / getDurability() / 2));
+        cout << "Daño realizado: " << (sharpness * getDamage() / 1000) << endl;
     }
     private:
     int sharpness;

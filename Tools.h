@@ -3,16 +3,22 @@
 
 class Tools {
     public:
-    void setHealth(int health) {
+    void setName(std::string name) {
+        this -> name = name;
+    }
+    std::string getName() {
+        return this->name;
+    } 
+    void setHealth(float health) {
         this -> health = health; 
     }
-    int getHealth() {
+    float getHealth() {
         return this -> health; 
     }
-    void setDurability(int durability) {
+    void setDurability(float durability) {
         this -> durability = durability;
     }
-    int getDurability() {
+    float getDurability() {
         return this -> durability;
     }
     void setDamage(int damage) {
@@ -22,9 +28,9 @@ class Tools {
         return this -> damage;
     }
     private:
-    int health;
-    int durability;
+    float health;
+    float durability;
     int damage;
+    std::string name;
 };
-
 #endif
