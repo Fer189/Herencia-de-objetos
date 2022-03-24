@@ -3,6 +3,7 @@
 #include "tools.h"
 #include "Axe.h"
 #include "Picaxe.h"
+#include "Shovel.h"
 #define WOOD 1
 #define STONE 2
 #define STEEL 3
@@ -13,7 +14,8 @@ using namespace std;
 int main() {
     Sword sword("MataPuercos", DIAMOND);
     Axe axe("CortaTroncos", DIAMOND);
-    Picaxe picaxe("PikaPiedras", WOOD);
+    Picaxe picaxe("PikaPiedras", DIAMOND);
+    Shovel shovel("ExcavaTierra", DIAMOND);
     sword.showSword();
     sword.attack();
     sword.showSword();
@@ -28,5 +30,10 @@ int main() {
     picaxe.attack();
     picaxe.attackMineralOre();
     picaxe.showPicaxe();
+    cout << " " << endl;
+    shovel.showShovel();
+    shovel.attack();
+    shovel.attackDirt();
+    shovel.showShovel();
     return 0;
 }

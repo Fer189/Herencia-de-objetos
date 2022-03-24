@@ -8,19 +8,19 @@
 #define DIAMOND 5
 using namespace std;
 
-class Picaxe : protected Tools {
+class Shovel : protected Tools {
     public:
-    Picaxe(string name, int material) {
-        hardness = 100;
+    Shovel(string name, int material) {
+        sharpness = 100;
         setName(name);
         setHealth(100);
         switch(material) {
             case WOOD:
-            setDurability(150);
+            setDurability(200);
             setDamage(25);
             break;
             case STONE:
-            setDurability(220);
+            setDurability(250);
             setDamage(40);
             break;
             case STEEL:
@@ -28,31 +28,31 @@ class Picaxe : protected Tools {
             setDamage(50);
             break;
             case GOLD:
-            setDurability(340);
+            setDurability(330);
             setDamage(90);
             break;
             case DIAMOND:
-            setDurability(450);
+            setDurability(420);
             setDamage(110);
             break;
         }
     }
-    void showPicaxe() {
+    void showShovel() {
         cout << "Salud: " << getHealth() << endl;
         cout << "Nombre: " << getName() << endl;
         cout << "Durabilidad " << getDurability() << endl;
     }
     void attack() {
         setHealth(getHealth() - (1000 / getDurability()));
-        cout << "Daño realizado: " << (hardness * getDamage() / 1000) << endl;
+        cout << "Daño realizado: " << (sharpness * getDamage() / 1000) << endl;
     }
     void repair() {
         setHealth(100);
     }
-    void attackMineralOre() {
+    void attackDirt() {
         setHealth(getHealth() - (1000 / getDurability() / 2));
-        cout << "Daño realizado: " << (hardness * getDamage() * 3 / 1000) << endl;
+        cout << "Daño realizado: " << (sharpness * getDamage() * 10 / 1000) << endl;
     }
     private:
-    int hardness;
+    int sharpness;
 };

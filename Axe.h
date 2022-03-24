@@ -51,7 +51,7 @@ class Axe : protected Tools {
     }
     void attackTree() {
         setHealth(getHealth() - (1000 / getDurability() / 2));
-        cout << "Daño realizado: " << (sharpness * getDamage() * 2 / 1000) << endl;
+        cout << "Daño realizado: " << (sharpness * getDamage() * 2.5 / 1000) << endl;
     }
     private:
     int sharpness;
