@@ -19,6 +19,7 @@ int main() {
     Shovel shovel("ExcavaTierra", DIAMOND);
     Machete machete("CortaCocos", DIAMOND);
     sword.showSword();
+    sword.attack();
     sword.setEnchantment(3);
     sword.attack();
     sword.showSword();
