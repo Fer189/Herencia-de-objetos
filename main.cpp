@@ -4,6 +4,7 @@
 #include "Axe.h"
 #include "Picaxe.h"
 #include "Shovel.h"
+#include "Machete.h"
 #define WOOD 1
 #define STONE 2
 #define STEEL 3
@@ -16,6 +17,7 @@ int main() {
     Axe axe("CortaTroncos", DIAMOND);
     Picaxe picaxe("PikaPiedras", DIAMOND);
     Shovel shovel("ExcavaTierra", DIAMOND);
+    Machete machete("CortaCocos", DIAMOND);
     sword.showSword();
     sword.attack();
     sword.showSword();
@@ -35,5 +37,9 @@ int main() {
     shovel.attack();
     shovel.attackDirt();
     shovel.showShovel();
+    cout << " " << endl;
+    machete.showMachete();
+    machete.attack();
+    machete.showMachete();
     return 0;
 }
